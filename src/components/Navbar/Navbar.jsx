@@ -16,6 +16,7 @@ import {
   ListItemText,
   Divider,
   Collapse,
+  Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -87,7 +88,7 @@ const Navbar = () => {
 
           {!isMobile && (
             <Box
-              sx={{ display: 'flex', alignItems: 'center', gap: 4 }}
+              sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
               data-aos='fade-down'
             >
               {navLinks.map((link) =>
@@ -170,8 +171,6 @@ const Navbar = () => {
                   </Button>
                 )
               )}
-
-              {/* CONSULT US for desktop */}
               <Button
                 variant='contained'
                 sx={{
@@ -199,7 +198,6 @@ const Navbar = () => {
         </Toolbar>
       </Container>
 
-      {/* Drawer for mobile/tablet */}
       <Drawer
         anchor='right'
         open={drawerOpen}
@@ -221,6 +219,11 @@ const Navbar = () => {
                 <ListItem
                   button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'right',
+                    alignItems: 'center',
+                  }}
                 >
                   <ListItemText primary={link} />
                   {mobileServicesOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
@@ -254,7 +257,6 @@ const Navbar = () => {
 
           <Divider sx={{ my: 2 }} />
 
-          {/* CONSULT US for mobile/tablet */}
           <Box sx={{ px: 2 }}>
             <Button
               fullWidth
